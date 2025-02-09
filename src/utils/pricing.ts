@@ -34,7 +34,7 @@ export const STABLE_COINS: string[] = [
   '0xbc2f884680c95a02cea099da2f524b366d9028ba', // bcUSDT
 ]
 
-export const MINIMUM_ETH_LOCKED = BigDecimal.fromString('0.1')
+export const MINIMUM_ETH_LOCKED = BigDecimal.fromString('0.01')
 
 const Q192 = BigInt.fromI32(2).pow(192 as u8)
 export function sqrtPriceX96ToTokenPrices(sqrtPriceX96: BigInt, token0: Token, token1: Token): BigDecimal[] {

@@ -210,7 +210,7 @@ export function getSubgraphConfig(): SubgraphConfig {
       stablecoinWrappedNativePoolAddress: '0xdbe5beacee7eb36301c1ffc5dfc451324ba0dad1', // USDC-WBNB 0.3% pool
       stablecoinIsToken0: false,
       wrappedNativeAddress: '0x3743ec0673453e5009310c727ba4eaf7b3a1cc04', // WBCH ok
-      minimumNativeLocked: BigDecimal.fromString('0.1'),
+      minimumNativeLocked: BigDecimal.fromString('0.01'),
       stablecoinAddresses: [
         '0xbc2f884680c95a02cea099da2f524b366d9028ba', // bcUSDT
       ],
