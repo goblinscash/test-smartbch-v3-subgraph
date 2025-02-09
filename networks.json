@@ -76,5 +76,11 @@
       "address": "0x0227628f3F023bb0B980b67D528571c95c6DaC1c",
       "startBlock": 3518270
     }
+  },
+  "smartbch-mainnet": {
+    "Factory": {
+      "address": "0x08153648c209644a68ed4dc0ac06795f6563d17b",
+      "startBlock": 14169895
+    }
   }
 }

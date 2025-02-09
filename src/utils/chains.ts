@@ -17,6 +17,7 @@ export enum ChainId {
   ZORA_MAINNET = 7777777,
   WORLDCHAIN_MAINNET = 480,
   SEPOLIA = 11155111,
+  SMARTBCH = 10000,
 }
 
 // subgraph does not support string enums, hence these constants
@@ -33,6 +34,7 @@ const ZKSYNC_ERA_NETWORK_NAME = 'zksync-era'
 const ZORA_MAINNET_NETWORK_NAME = 'zora-mainnet'
 const WORLDCHAIN_MAINNET_NETWORK_NAME = 'worldchain-mainnet'
 const SEPOLIA_NETWORK_NAME = 'sepolia'
+const SMARTBCH_NETWORK_NAME = 'smartbch-mainnet'
 
 // Note: All token and pool addresses should be lowercased!
 export class SubgraphConfig {
@@ -201,7 +203,43 @@ export function getSubgraphConfig(): SubgraphConfig {
       poolsToSkip: [],
       poolMappings: [],
     }
-  } else if (selectedNetwork == CELO_NETWORK_NAME) {
+  }
+  else if (selectedNetwork == SMARTBCH_NETWORK_NAME) {
+    return {
+      factoryAddress: '0x08153648c209644a68ed4dc0ac06795f6563d17b',
+      stablecoinWrappedNativePoolAddress: '0xdbe5beacee7eb36301c1ffc5dfc451324ba0dad1', // USDC-WBNB 0.3% pool
+      stablecoinIsToken0: false,
+      wrappedNativeAddress: '0x3743ec0673453e5009310c727ba4eaf7b3a1cc04', // WBCH ok
+      minimumNativeLocked: BigDecimal.fromString('0.1'),
+      stablecoinAddresses: [
+        '0xbc2f884680c95a02cea099da2f524b366d9028ba', // bcUSDT
+      ],
+      whitelistTokens: [
+        '0x3743ec0673453e5009310c727ba4eaf7b3a1cc04', // WBCH ok
+        '0xbc9bd8dde6c5a8e1cbe293356e02f5984693b195', // bcBCH
+        '0x56381cb87c8990971f3e9d948939e1a95ea113a3', // GOB
+        '0x73be9c8edf5e951c9a0762ea2b1de8c8f38b5e91', // TANGO
+        '0xbb2a35cc3e3ddb679fe30a82051633bc822e4191', // bbUSDC
+        '0xbbb3700f33fcb64437dc28a7beb6b21f5cc76fb9', // bbUSDT
+        '0xbc2f884680c95a02cea099da2f524b366d9028ba', // bcUSDT
+        '0xbb10b6d11db70f33417b08e0b87042275c933bb9', // bbETH
+        '0x0df6a7169132265bb4f2b0fac0a37b26ea6f93fc', // mog
+        '0x21ba72ff5b25add1dc3d42cab987f1c4e0466814', // shiba
+        '0x617599b1177d56d130da5fd5cf896e3f186eb6f1', // spx
+        '0x6c6b3e0f1a7b3513c55e1f288c99d53441990613', // floki
+        '0x85689be665562c06aa052e0e2a2422b286d30c44', // bitcoin
+        '0x8cf81850aa9d5a4e3df180afbaf0d2093a3f3379', // pepe
+        '0x9ca6f10d19cbda52bbd615f7e1f1821386abe3d1', // doge
+        '0xc993af7fa109e3dd17347c7ce612a5ed848f4b74', // aero
+        '0xbc7b858b5694d485ad17c89675649ce44de21bea', // bcbnb
+      ],
+      tokenOverrides: [],
+      poolsToSkip: [],
+      poolMappings: [],
+    }
+  } 
+  
+  else if (selectedNetwork == CELO_NETWORK_NAME) {
     return {
       factoryAddress: '0xAfE208a311B21f13EF87E33A90049fC17A7acDEc',
       stablecoinWrappedNativePoolAddress: '0x2d70cbabf4d8e61d5317b62cbe912935fd94e0fe', // CUSD-CELO 0.01% pool
